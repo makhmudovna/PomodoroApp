@@ -1,12 +1,15 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:pomodoro/auth/app_widgets.dart';
-import 'package:pomodoro/auth/create_password.dart';
-import 'package:pomodoro/features/app_color.dart';
-import 'package:pomodoro/auth/auth_text.dart';
-import 'package:pomodoro/features/app_size.dart';
-import 'package:pomodoro/auth/text_styles.dart';
-import 'package:pomodoro/auth/sign_in_page.dart';
+import 'package:pomodoro/core/widgets/app_text_field.dart';
+import 'package:pomodoro/core/widgets/divider_with_text.dart';
+import 'package:pomodoro/core/widgets/primary_button.dart';
+import 'package:pomodoro/core/widgets/social_button.dart';
+import 'package:pomodoro/features/auth/presentation/pages/create_password.dart';
+import 'package:pomodoro/core/constants/app_color.dart';
+import 'package:pomodoro/core/constants/auth_text.dart';
+import 'package:pomodoro/core/constants/app_size.dart';
+import 'package:pomodoro/core/theme/text_styles.dart';
+import 'package:pomodoro/features/auth/presentation/pages/sign_in_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});

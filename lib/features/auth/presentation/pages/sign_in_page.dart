@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:pomodoro/auth/app_widgets.dart';
-import 'package:pomodoro/auth/forgot_password_page.dart';
-import 'package:pomodoro/auth/successful.dart';
-import 'package:pomodoro/features/app_color.dart';
-import 'package:pomodoro/auth/auth_text.dart';
-import 'package:pomodoro/features/app_size.dart';
-import 'package:pomodoro/auth/text_styles.dart';
-import 'package:pomodoro/auth/sign_up_page.dart';
+import 'package:pomodoro/core/widgets/app_text_field.dart';
+import 'package:pomodoro/core/widgets/divider_with_text.dart';
+import 'package:pomodoro/core/widgets/primary_button.dart';
+import 'package:pomodoro/core/widgets/social_button.dart';
+import 'package:pomodoro/features/auth/presentation/pages/forgot_password_page.dart';
+import 'package:pomodoro/features/auth/presentation/pages/successful.dart';
+import 'package:pomodoro/core/constants/app_color.dart';
+import 'package:pomodoro/core/constants/auth_text.dart';
+import 'package:pomodoro/core/constants/app_size.dart';
+import 'package:pomodoro/core/theme/text_styles.dart';
+import 'package:pomodoro/features/auth/presentation/pages/sign_up_page.dart';
 import 'package:flutter/gestures.dart';
 
 class SignInPage extends StatefulWidget {

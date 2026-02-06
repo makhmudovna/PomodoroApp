@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pomodoro/features/app_color.dart';
-import 'package:pomodoro/splash_page/onboarding_model.dart';
-import 'package:pomodoro/splash_page/onboarding_text.dart';
-import 'package:pomodoro/auth/lets_get_started_page.dart';
+import 'package:pomodoro/core/constants/app_color.dart';
+import 'package:pomodoro/core/widgets/app_base.dart';
+import 'package:pomodoro/features/onboarding_model.dart';
+import 'package:pomodoro/core/constants/onboarding_text.dart';
+import 'package:pomodoro/features/auth/presentation/pages/lets_get_started_page.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -66,9 +67,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   Widget build(BuildContext context) {
     print("PAGES: ${_page}");
-    return Scaffold(
-      backgroundColor: AppColor.appColorPrimary,
-      body: Column(
+    return AppBase(
+      title: 'title',
+      icon: Icon(Icons.arrow_back_ios, color: Colors.black,),
+      child: 
+       Column(
         children: [
           Expanded(
             child: PageView.builder(

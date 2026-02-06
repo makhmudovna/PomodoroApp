@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pomodoro/auth/app_widgets.dart';
-import 'package:pomodoro/auth/auth_text.dart';
-import 'package:pomodoro/auth/text_styles.dart';
-import 'package:pomodoro/features/app_size.dart';
+import 'package:pomodoro/core/widgets/app_text_field.dart';
+import 'package:pomodoro/core/constants/auth_text.dart';
+import 'package:pomodoro/core/theme/text_styles.dart';
+import 'package:pomodoro/core/constants/app_size.dart';
+import 'package:pomodoro/core/widgets/primary_button.dart';
 
 class CreatePassword extends StatefulWidget {
   const CreatePassword({super.key});
@@ -18,11 +19,12 @@ class _CreatePasswordState extends State<CreatePassword> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
-          icon: const Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back_ios,color: Colors.black,),
         ),
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         elevation: 0,
+        scrolledUnderElevation: 0,
       ),
       backgroundColor: Colors.white,
       body: SafeArea(

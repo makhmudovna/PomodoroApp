@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pomodoro/features/app_color.dart';
+import 'package:pomodoro/core/constants/app_color.dart';
 
 class AppTextStyles {
   static final title = GoogleFonts.poppins(

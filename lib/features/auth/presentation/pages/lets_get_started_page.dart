@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pomodoro/auth/sign_in_page.dart';
-import 'package:pomodoro/features/app_color.dart';
+import 'package:pomodoro/features/auth/presentation/pages/sign_in_page.dart';
+import 'package:pomodoro/features/auth/presentation/pages/sign_up_page.dart';
+import 'package:pomodoro/core/constants/app_color.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pomodoro/auth/sign_up_page.dart';
 
 class LetsGetStartedPage extends StatelessWidget {
   const LetsGetStartedPage({super.key});

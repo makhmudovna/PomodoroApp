@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pomodoro/auth/app_widgets.dart';
-import 'package:pomodoro/auth/otp_code.dart';
-import 'package:pomodoro/features/app_size.dart';
-import 'package:pomodoro/auth/auth_text.dart';
-import 'package:pomodoro/auth/text_styles.dart';
+import 'package:pomodoro/core/widgets/primary_button.dart';
+import 'package:pomodoro/features/auth/presentation/pages/otp_code.dart';
+import 'package:pomodoro/core/constants/app_size.dart';
+import 'package:pomodoro/core/constants/auth_text.dart';
+import 'package:pomodoro/core/theme/text_styles.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
