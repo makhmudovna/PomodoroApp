@@ -5,31 +5,41 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.9.2
+  sdk: '>=3.0.0 <4.0.0'  
 
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.8
-  google_fonts: ^7.0.0
+  google_fonts: ^6.1.0 
   flutter_screenutil: ^5.9.3
-
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
 
-flutter:
-  assets:
+flutter:  
+  uses-material-design: true
+  
+  assets: 
     - assets/
-
-
+    - assets/google.png
+    - assets/apple.png
+    - assets/facebook.png
+    - assets/x.png
+    - assets/clock.png
+    - assets/password_new.png
+    - assets/light_time.png
+    - assets/dark_time.png
+    - assets/light_task.png
+    - assets/dark_task.png
+    - assets/light_calendar.png
+    - assets/dark_calendar.png
 
 # flutter_native_splash:
-#  color: "#FF4749"
-#  image: assets/images/clock.png
-#  android: true
-#  ios: true
-#  web: true
+#   color: "#FF4749"
+#   image: assets/clock.png
+#   android: true
+#   ios: true
+#   web: true
