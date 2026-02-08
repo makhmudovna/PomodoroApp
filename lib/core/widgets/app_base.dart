@@ -1,27 +1,84 @@
 import 'package:flutter/material.dart';
 
-class AppBase extends StatefulWidget {
+/// Custom base scaffold widget
+/// Barcha sahifalar uchun umumiy wrapper
+class AppBase extends StatelessWidget {
   final Widget? child;
   final String? title;
-  final Widget? icon;
-  const AppBase({super.key, this.child, this.title, this.icon});
+  final Widget? leading;
+  final List<Widget>? actions;
+  final Color? backgroundColor;
+  final bool showAppBar;
+  final Widget? bottomNavigationBar;
+  final Widget? floatingActionButton;
+  final bool resizeToAvoidBottomInset;
+  final PreferredSizeWidget? appBar;
 
-  @override
-  State<AppBase> createState() => _AppBaseState();
-}
+  const AppBase({
+    super.key,
+    this.child,
+    this.title,
+    this.leading,
+    this.actions,
+    this.backgroundColor,
+    this.showAppBar = true,
+    this.bottomNavigationBar,
+    this.floatingActionButton,
+    this.resizeToAvoidBottomInset = true,
+    this.appBar,
+  });
 
-class _AppBaseState extends State<AppBase> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title ?? ''), leading: widget.icon),
-      body: widget.child,
+      backgroundColor: backgroundColor ?? Colors.white,
+      appBar: appBar ??
+          (showAppBar && title != null
+              ? AppBar(
+                  title: Text(
+                    title!,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                  leading: leading,
+                  actions: actions,
+                  backgroundColor: backgroundColor ?? Colors.white,
+                  elevation: 0,
+                  surfaceTintColor: Colors.white,
+                  iconTheme: const IconThemeData(color: Colors.black),
+                  foregroundColor: Colors.black,
+                )
+              : null),
+      body: SafeArea(child: child ?? const SizedBox.shrink()),
+      bottomNavigationBar: bottomNavigationBar,
+      floatingActionButton: floatingActionButton,
+      resizeToAvoidBottomInset: resizeToAvoidBottomInset,
     );
   }
 }
-// TODO: 
-// 1)Ушбу виджетни кандай клиб асос(бошка виджетлар (page) лар) устидан тарикасида 
-// ишлатилнади. 
-// 2) Параметрлар очилиши ва уларга киймат бериш.
-// 3) Ушбу юкоридаги код асосида параметрлар тайплар хакида тушунча.
-// 4) Параметрни кандай тогри очилади тушунча.
+
+/// AppBase without AppBar
+class AppBaseNoAppBar extends StatelessWidget {
+  final Widget child;
+  final Color? backgroundColor;
+  final Widget? bottomNavigationBar;
+
+  const AppBaseNoAppBar({
+    super.key,
+    required this.child,
+    this.backgroundColor,
+    this.bottomNavigationBar,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBase(
+      showAppBar: false,
+      backgroundColor: backgroundColor,
+      bottomNavigationBar: bottomNavigationBar,
+      child: child,
+    );
+  }
+}
