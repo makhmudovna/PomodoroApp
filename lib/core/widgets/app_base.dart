@@ -31,26 +31,25 @@ class AppBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor ?? Colors.white,
-      appBar: appBar ??
-          (showAppBar && title != null
-              ? AppBar(
-                  title: Text(
-                    title!,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
-                  ),
-                  leading: leading,
-                  actions: actions,
-                  backgroundColor: backgroundColor ?? Colors.white,
-                  elevation: 0,
-                  surfaceTintColor: Colors.white,
-                  iconTheme: const IconThemeData(color: Colors.black),
-                  foregroundColor: Colors.black,
-                )
-              : null),
+      backgroundColor: backgroundColor,
+      extendBody: true,
+      appBar: appBar ?? (showAppBar && title != null
+          ? AppBar(
+              title: Text(
+                title!,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+              leading: leading,
+              actions: actions,
+              backgroundColor: backgroundColor,
+              elevation: 0,
+              iconTheme: const IconThemeData(color: Colors.black),
+              foregroundColor: Colors.black,
+            )
+          : null),
       body: SafeArea(child: child ?? const SizedBox.shrink()),
       bottomNavigationBar: bottomNavigationBar,
       floatingActionButton: floatingActionButton,

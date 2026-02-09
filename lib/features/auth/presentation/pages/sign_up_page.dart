@@ -10,6 +10,7 @@ import 'package:pomodoro/core/constants/auth_text.dart';
 import 'package:pomodoro/core/constants/app_size.dart';
 import 'package:pomodoro/core/theme/text_styles.dart';
 import 'package:pomodoro/features/auth/presentation/pages/sign_in_page.dart';
+import 'package:pomodoro/features/pomodoro/presentation/pages/home_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -170,7 +171,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => const CreatePassword()),
+                      MaterialPageRoute(builder: (_) => const HomePage()),
                     );
                   },
                   text: "Sign up",

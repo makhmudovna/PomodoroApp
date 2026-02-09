@@ -11,6 +11,7 @@ import 'package:pomodoro/core/constants/app_size.dart';
 import 'package:pomodoro/core/theme/text_styles.dart';
 import 'package:pomodoro/features/auth/presentation/pages/sign_up_page.dart';
 import 'package:flutter/gestures.dart';
+import 'package:pomodoro/features/pomodoro/presentation/pages/home_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -178,7 +179,7 @@ class _SignInPageState extends State<SignInPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => const Successful()),
+                      MaterialPageRoute(builder: (_) => const HomePage()),
                     );
                   },
                   text: 'Sign in',

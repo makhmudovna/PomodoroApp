@@ -67,29 +67,27 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   Widget build(BuildContext context) {
     print("PAGES: ${_page}");
-    return AppBase(
-      title: 'title',
-      icon: Icon(Icons.arrow_back_ios, color: Colors.black,),
-      child: 
-       Column(
-        children: [
-          Expanded(
-            child: PageView.builder(
-              itemBuilder: (context, index) {
-                return _buildPage(_page[index]);
-              },
-              physics: const NeverScrollableScrollPhysics(),
-              controller: _pageController,
-              onPageChanged: (index) {
-                setState(() {
-                  _currentPage = index;
-                });
-              },
-              itemCount: _page.length,
-            ),
-          ),
-        ],
-      ),
+    return AppBaseNoAppBar(
+      backgroundColor: AppColor.appColorPrimary,
+      child: Column(
+       children: [
+         Expanded(
+           child: PageView.builder(
+             itemBuilder: (context, index) {
+               return _buildPage(_page[index]);
+             },
+             physics: const NeverScrollableScrollPhysics(),
+             controller: _pageController,
+             onPageChanged: (index) {
+               setState(() {
+                 _currentPage = index;
+               });
+             },
+             itemCount: _page.length,
+           ),
+         ),
+       ],
+              ),
     );
   }
 
