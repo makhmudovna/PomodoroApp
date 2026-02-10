@@ -36,10 +36,5 @@ flutter:
     - assets/dark_task.png
     - assets/light_calendar.png
     - assets/dark_calendar.png
-
-# flutter_native_splash:
-#   color: "#FF4749"
-#   image: assets/clock.png
-#   android: true
-#   ios: true
-#   web: true
+    - assets/avatar.jpg
+    - assets/home_page_assets/
