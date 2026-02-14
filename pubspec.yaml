@@ -13,6 +13,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   google_fonts: ^6.1.0 
   flutter_screenutil: ^5.9.3
+  audioplayers: ^6.5.1
 
 dev_dependencies:
   flutter_test:
@@ -38,3 +39,10 @@ flutter:
     - assets/dark_calendar.png
     - assets/avatar.jpg
     - assets/home_page_assets/
+    - assets/sounds/rainfall.mp3
+    - assets/sounds/ocean_waves.mp3
+    - assets/sounds/forest_wind.mp3
+    - assets/sounds/crackling_fire.mp3
+    - assets/sounds/mountain_stream.mp3
+    - assets/sounds/night_crickets.mp3
+    - assets/sounds/thunderstorm.mp3
