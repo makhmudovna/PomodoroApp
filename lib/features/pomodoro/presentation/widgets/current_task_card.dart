@@ -19,8 +19,7 @@ class CurrentTaskCard extends StatelessWidget {
     required this.totalPomodoros,
     required this.completedMinutes,
     required this.totalMinutes,
-    this.iconColor = const Color(
-        0xFFFF4749),
+    this.iconColor = const Color(0xFFFF4749),
     required this.image,
     this.onTap,
     this.isExpanded = false,
@@ -29,7 +28,7 @@ class CurrentTaskCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(6), // ✅ To'g'rilandi: 6 dan 16 ga

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pomodoro/core/constants/app_color.dart';
 import 'package:pomodoro/core/widgets/app_base.dart';
+import 'package:pomodoro/features/pomodoro/data/model/white_noise_player.dart';
 import 'package:pomodoro/features/pomodoro/presentation/widgets/bottom_nav_bar.dart';
 import 'package:pomodoro/features/pomodoro/presentation/widgets/current_task_card.dart';
 import 'package:pomodoro/features/pomodoro/presentation/widgets/stric_mode.dart';
-import 'package:pomodoro/features/pomodoro/presentation/widgets/timer_widget.dart';
+import 'package:pomodoro/features/pomodoro/presentation/widgets/timer_card.dart';
 import 'package:pomodoro/features/pomodoro/presentation/widgets/user_header.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,6 +18,40 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool _isTaskExpanded = false;
+
+  // ✅ White Noise o'zgaruvchilari (elon qilindi)
+  final WhiteNoisePlayer _whiteNoisePlayer = WhiteNoisePlayer();
+  String? _selectedSound;
+  double? _volume;
+
+  @override
+  void dispose() {
+    // Stop sound when leaving page
+    _whiteNoisePlayer.stop();
+    super.dispose();
+  }
+
+  // ✅ White Noise settings handler
+  void _handleWhiteNoiseSettings(Map<String, dynamic>? result) {
+    if (result != null) {
+      setState(() {
+        _selectedSound = result['sound']; // ✅ Saqlandi
+        _volume = result['volume']; // ✅ Saqlandi
+      });
+
+      print('✅ Sound: $_selectedSound');
+      print('✅ Volume: $_volume');
+
+      // Ovozni ijro qilish
+      if (_selectedSound != null &&
+          _selectedSound != 'None' &&
+          _volume != null) {
+        _whiteNoisePlayer.play(_selectedSound!, _volume!);
+      } else {
+        _whiteNoisePlayer.stop();
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +74,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 16),
 
             CurrentTaskCard(
-              taskTitle: 'Creat a Design Wireframe',
+              taskTitle: 'Create a Design Wireframe',
               completedPomodoros: 4,
               totalPomodoros: 6,
               completedMinutes: 100,
@@ -55,12 +90,15 @@ class _HomePageState extends State<HomePage> {
 
             const SizedBox(height: 16),
 
-            //Timer yozilishi kerak
-            TimerWidget(),
+            // Timer
+            TimerCard(),
 
             const SizedBox(height: 16),
 
-            StricMode(),
+            // ✅ StricMode with callback
+            StricMode(
+              onWhiteNoiseChanged: _handleWhiteNoiseSettings,
+            ),
 
             const SizedBox(height: 16),
 
@@ -116,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                   _isTaskExpanded = !_isTaskExpanded;
                 });
               },
-            ), 
+            ),
 
             const SizedBox(height: 16),
 
@@ -133,12 +171,12 @@ class _HomePageState extends State<HomePage> {
                   _isTaskExpanded = !_isTaskExpanded;
                 });
               },
-            ), 
+            ),
 
             const SizedBox(height: 16),
 
             CurrentTaskCard(
-              taskTitle: 'Creat a Design Wireframe',
+              taskTitle: 'Create a Design Wireframe',
               completedPomodoros: 4,
               totalPomodoros: 6,
               completedMinutes: 100,
@@ -155,7 +193,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 16),
 
             CurrentTaskCard(
-              taskTitle: 'Creat a Design Wireframe',
+              taskTitle: 'Create a Design Wireframe',
               completedPomodoros: 4,
               totalPomodoros: 6,
               completedMinutes: 100,
@@ -167,7 +205,7 @@ class _HomePageState extends State<HomePage> {
                   _isTaskExpanded = !_isTaskExpanded;
                 });
               },
-            ),          
+            ),
           ],
         ),
       ),
