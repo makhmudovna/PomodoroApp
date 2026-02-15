@@ -5,7 +5,7 @@ import 'package:pomodoro/core/widgets/app_base.dart';
 import 'package:pomodoro/features/pomodoro/data/model/white_noise_player.dart';
 import 'package:pomodoro/features/pomodoro/presentation/widgets/bottom_nav_bar.dart';
 import 'package:pomodoro/features/pomodoro/presentation/widgets/current_task_card.dart';
-import 'package:pomodoro/features/pomodoro/presentation/widgets/stric_mode.dart';
+import 'package:pomodoro/features/pomodoro/presentation/widgets/stric%20mode%20widgets/stric_mode.dart';
 import 'package:pomodoro/features/pomodoro/presentation/widgets/timer_card.dart';
 import 'package:pomodoro/features/pomodoro/presentation/widgets/user_header.dart';
 
